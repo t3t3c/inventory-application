@@ -1,0 +1,15 @@
+{
+  "name": "inventory-application",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "t3t3c",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
