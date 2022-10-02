@@ -31,4 +31,9 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
+// ROUTES
+
+const bicycleRouter = require('./routes/bicycles');
+app.use('/bicycles', bicycleRouter);
+
 app.listen(process.env.PORT || 3000);
