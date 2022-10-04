@@ -7,13 +7,13 @@
     <title><%= title %></title>
   </head>
   <body>
+    <!-- prettier-ignore -->
     <%- include('./partials/navigation') %>
-    <h1>Bicycles:</h1>
-    <% bicycle_list.forEach(element => { %>
-    <p><%= element.brand.name.toUpperCase() %></p>
-    <h3><a href="<%= element.url %>"><%= element.name %></a></h3>
-    <p><%= element.description %></p>
-    <p>Price: <%= element.price %> €</p>
+    <h1>Category:</h1>
+    <% categoryList.forEach(category => { %>
+    <h3><a href="<%= category.url %>"><%= category.name %></a></h3>
+    <p><%= category.description %></p>
     <% }); %>
+    <!-- prettier-ignore -->
   </body>
 </html>

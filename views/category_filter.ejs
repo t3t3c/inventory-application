@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
+    <title><%= title %> bicycles</title>
   </head>
   <body>
     <%- include('./partials/navigation') %>
-    <h1>Bicycles:</h1>
-    <% bicycle_list.forEach(element => { %>
-    <p><%= element.brand.name.toUpperCase() %></p>
+    <h1><%= title %> bicycles:</h1>
+    <% filteredBicycles.forEach(element => { %>
     <h3><a href="<%= element.url %>"><%= element.name %></a></h3>
     <p><%= element.description %></p>
     <p>Price: <%= element.price %> €</p>

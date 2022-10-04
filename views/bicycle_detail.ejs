@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= locals.title %></title>
+  </head>
+  <body>
+    <%- include('./partials/navigation') %>
+    <p>
+      <a href="<%= locals.bicycle.brand.url %>"
+        ><%= locals.bicycle.brand.name.toUpperCase() %></a
+      >
+    </p>
+    <h3><%= locals.bicycle.name %></h3>
+    <p><%= locals.bicycle.description %></p>
+    <p>Price: <%= locals.bicycle.price %> €</p>
+    <p>Number in Stock: <%= locals.bicycle.numberInStock %></p>
+    <p>
+      Category:
+      <a href="<%= locals.bicycle.category.url %>"
+        ><%= locals.bicycle.category.name %></a
+      >
+    </p>
+    <p>
+      <a href='<%= locals.bicycle.url + "/delete" %>'>Delete</a> this bicycle
+    </p>
+  </body>
+</html>

@@ -8,12 +8,11 @@
   </head>
   <body>
     <%- include('./partials/navigation') %>
-    <h1>Bicycles:</h1>
-    <% bicycle_list.forEach(element => { %>
-    <p><%= element.brand.name.toUpperCase() %></p>
-    <h3><a href="<%= element.url %>"><%= element.name %></a></h3>
-    <p><%= element.description %></p>
-    <p>Price: <%= element.price %> €</p>
-    <% }); %>
+    <h1><%= title %></h1>
+    <form method="post" action="">
+      <p>Are you sure you want to delete <%= locals.bicycle.name %>?</p>
+      <button type="submit">Delete</button>
+    </form>
+    <a href="<%= bicycle.url %>">Go back</a>
   </body>
 </html>

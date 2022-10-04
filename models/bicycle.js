@@ -26,7 +26,7 @@ const bicylceSchema = new Schema({
 });
 
 bicylceSchema.virtual('url').get(function () {
-  return `bicycles/${this._id}`;
+  return `/bicycles/${this._id}`;
 });
 
 module.exports = mongoose.model('Bicycle', bicylceSchema);

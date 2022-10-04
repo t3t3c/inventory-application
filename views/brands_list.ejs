@@ -8,12 +8,12 @@
   </head>
   <body>
     <%- include('./partials/navigation') %>
-    <h1>Bicycles:</h1>
-    <% bicycle_list.forEach(element => { %>
-    <p><%= element.brand.name.toUpperCase() %></p>
-    <h3><a href="<%= element.url %>"><%= element.name %></a></h3>
-    <p><%= element.description %></p>
-    <p>Price: <%= element.price %> €</p>
-    <% }); %>
+    <h1>Brands:</h1>
+    <!-- prettier-ignore -->
+    <% brandsList.forEach((brand) => { %>
+    <h3><a href="<%= brand.url %>"><%= brand.name %></a></h3>
+    <p><%= brand.description %></p>
+    <% }) %>
+    <!-- prettier-ignore -->
   </body>
 </html>
