@@ -2,12 +2,16 @@
 <html lang="en">
   <%- include('./partials/head', { title }) %>
   <body>
+    <%- include('./partials/header') %>
     <%- include('./partials/navigation') %>
-    <h1><%= title %></h1>
-    <form method="post" action="">
-      <p>Are you sure you want to delete <%= locals.bicycle.name %>?</p>
-      <button type="submit">Delete</button>
-    </form>
-    <a href="<%= bicycle.url %>">Go back</a>
+    <div class="content">
+      <h1><%= title %></h1>
+      <form method="post" action="">
+        <p>Are you sure you want to delete <%= locals.bicycle.name %>?</p>
+        <button type="submit">Delete</button>
+      </form>
+      <a href="<%= bicycle.url %>">Go back</a>
+    </div>
+    <%- include('./partials/footer') %>
   </body>
 </html>
