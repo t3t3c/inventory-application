@@ -13,7 +13,7 @@ router.get('/', async (req, res, next) => {
       Brand.countDocuments({}).exec(),
       Category.countDocuments({}).exec(),
     ]);
-    res.render('index', { bicycle, brand, category });
+    res.render('index', { title: 'Home Page', bicycle, brand, category });
   } catch (error) {
     console.log('home get error: ', error);
     next(error);
