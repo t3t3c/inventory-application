@@ -19,7 +19,9 @@ const Category = require('./models/category');
 const Brand = require('./models/brand');
 
 var mongoose = require('mongoose');
-var mongoDB = userArgs[0];
+var mongoDB =
+  userArgs[0] ||
+  'mongodb+srv://t3t3c:inventorypassword@inventory.nb74yzf.mongodb.net/bicycle_inventory?retryWrites=true&w=majority';
 mongoose.connect(
   mongoDB,
   () => {

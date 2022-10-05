@@ -2,7 +2,8 @@
 - [x] delete for category
 - [x] home page
 - [x] update for bicycle
-- [ ] update for category
-- [ ] update for brand
+- [x] update for category
+- [x] update for brand
 - [ ] add pictures
 - [ ] add basic styling
+- [ ] sort by name/brand

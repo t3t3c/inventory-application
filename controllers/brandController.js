@@ -61,3 +61,26 @@ exports.deletePost = async (req, res) => {
     next(error);
   }
 };
+
+exports.updateGet = async (req, res, next) => {
+  try {
+    const brand = await Brand.findById(req.params.id);
+    res.render('brand_update', { title: `Update ${brand.name}`, brand });
+  } catch (error) {
+    console.log('brandController updateGet error: ', error);
+    next(error);
+  }
+};
+
+exports.updatePost = async (req, res, next) => {
+  try {
+    const brand = await Brand.findById(req.params.id);
+    brand.name = req.body.name;
+    brand.description = req.body.description;
+    await brand.save();
+    res.redirect('/brands');
+  } catch (error) {
+    console.log('brandController updatePost error: ', error);
+    next(error);
+  }
+};
