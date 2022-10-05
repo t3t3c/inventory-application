@@ -2,60 +2,64 @@
 <html lang="en">
   <%- include('./partials/head', { title }) %>
   <body>
+    <%- include('./partials/header') %>
     <%- include('./partials/navigation') %>
-    <h1><%= title %></h1>
-    <form action="<%= bicycle.url + '/update' %>" method="post">
-      <label for="name">Name: </label><br />
-      <input
-        type="text"
-        name="name"
-        id="description"
-        value="<%= bicycle.name %>"
-      /><br />
-      <label for="description">Description: </label><br />
-      <textarea name="description" id="description" cols="21" rows="10">
-<%= bicycle.description %></textarea
-      ><br />
-      <label for="price">Price (in euro): </label><br />
-      <input
-        type="number"
-        name="price"
-        id="price"
-        value="<%= bicycle.price %>"
-      /><br />
-      <label for="numberInStock">Number in stock:</label><br />
-      <input
-        type="number"
-        name="numberInStock"
-        id="numberInStock"
-        value="<%= bicycle.numberInStock %>"
-      /><br />
-      <!-- prettier-ignore -->
-      <div>
-        <label>Category: </label><br>
-        <% categories.forEach((category) => { %>
-          <% if (category.id === bicycle.category.id) { %>
-            <input type="radio" name="category" id="<%= category.id %>" value="<%= category.id %>" checked>
-            <% } else { %>
-              <input type="radio" name="category" id="<%= category.id %>" value="<%= category.id %>">
-          <% } %>
-          <label for="<%= category.id %>"><%= category.name %></label> <br>
-        <% }) %>
-      </div>
-      <!-- prettier-ignore -->
-      <div>
-        <label for="brand" >Brand: </label><br />
-        <select name="brand" id="brand">
-          <% brands.forEach((brand) => { %>
-            <% if (brand.id === bicycle.brand.id) { %>
-              <option value="<%= brand.id %>" selected><%=brand.name %></option>
-            <% } else { %>
-              <option value="<%= brand.id %>"><%=brand.name %></option>
-          <% }}) %>
-          </select>
-      </div>
-      <button type="submit">Update</button>
-      <a href="/home">Cancel and return home</a>
-    </form>
+    <div class="content">
+      <h1><%= title %></h1>
+      <form action="<%= bicycle.url + '/update' %>" method="post">
+        <label for="name">Name: </label><br />
+        <input
+          type="text"
+          name="name"
+          id="description"
+          value="<%= bicycle.name %>"
+        /><br />
+        <label for="description">Description: </label><br />
+        <textarea name="description" id="description" cols="21" rows="10">
+      <%= bicycle.description %></textarea
+        ><br />
+        <label for="price">Price (in euro): </label><br />
+        <input
+          type="number"
+          name="price"
+          id="price"
+          value="<%= bicycle.price %>"
+        /><br />
+        <label for="numberInStock">Number in stock:</label><br />
+        <input
+          type="number"
+          name="numberInStock"
+          id="numberInStock"
+          value="<%= bicycle.numberInStock %>"
+        /><br />
+        <!-- prettier-ignore -->
+        <div>
+          <label>Category: </label><br>
+          <% categories.forEach((category) => { %>
+            <% if (category.id === bicycle.category.id) { %>
+              <input type="radio" name="category" id="<%= category.id %>" value="<%= category.id %>" checked>
+              <% } else { %>
+                <input type="radio" name="category" id="<%= category.id %>" value="<%= category.id %>">
+            <% } %>
+            <label for="<%= category.id %>"><%= category.name %></label> <br>
+          <% }) %>
+        </div>
+        <!-- prettier-ignore -->
+        <div>
+          <label for="brand" >Brand: </label><br />
+          <select name="brand" id="brand">
+            <% brands.forEach((brand) => { %>
+              <% if (brand.id === bicycle.brand.id) { %>
+                <option value="<%= brand.id %>" selected><%=brand.name %></option>
+              <% } else { %>
+                <option value="<%= brand.id %>"><%=brand.name %></option>
+            <% }}) %>
+            </select>
+        </div>
+        <button type="submit">Update</button>
+        <a href="/home">Cancel and return home</a>
+      </form>
+    </div>
+    <%- include('./partials/footer') %>
   </body>
 </html>

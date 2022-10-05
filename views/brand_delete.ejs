@@ -2,17 +2,20 @@
 <html lang="en">
   <%- include('./partials/head', { title }) %>
   <body>
-    <%- include('./partials/navigation') %>
-    <h1><%= title %></h1>
-    <form method="post" action="">
-      <p>Are you sure you want to delete <%= locals.brand.name %>?</p>
-      <p>
-        <strong>
-          Doing so will remove <em>all</em> bicycles that have this brand.
-        </strong>
-      </p>
-      <button type="submit">Delete</button>
-    </form>
-    <a href="/brands">Go back</a>
+    <%- include('./partials/header') %> <%- include('./partials/navigation') %>
+    <div class="content">
+      <h1><%= title %></h1>
+      <form method="post" action="">
+        <p>Are you sure you want to delete <%= locals.brand.name %>?</p>
+        <p>
+          <strong>
+            Doing so will remove <em>all</em> bicycles that have this brand.
+          </strong>
+        </p>
+        <button type="submit">Delete</button>
+      </form>
+      <a href="/brands">Go back</a>
+    </div>
+    <%- include('./partials/footer') %>
   </body>
 </html>

@@ -2,14 +2,18 @@
 <html lang="en">
   <%- include('./partials/head', { title }) %>
   <body>
-    <%- include('./partials/navigation') %>
-    <h1>Bicycle inventory</h1>
-    <p>Only the best bicycles</p>
-    <h2>We have:</h2>
-    <ul>
-      <li><%= bicycle %> bicycles</li>
-      <li><%= brand %> brands</li>
-      <li><%= category %> categories</li>
-    </ul>
+    <%- include('./partials/header') %> <%- include('./partials/navigation') %>
+
+    <div class="content">
+      <h1>Bicycle inventory</h1>
+      <p>Only the best bicycles</p>
+      <h2>We have:</h2>
+      <ul>
+        <li><strong><%= bicycle %></strong> bicycles</li>
+        <li><strong><%= brand %></strong> brands</li>
+        <li><strong><%= category %></strong> categories</li>
+      </ul>
+    </div>
+    <%- include('./partials/footer') %>
   </body>
 </html>

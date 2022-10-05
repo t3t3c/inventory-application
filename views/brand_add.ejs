@@ -2,20 +2,23 @@
 <html lang="en">
   <%- include('./partials/head', { title }) %>
   <body>
-    <%- include('./partials/navigation') %>
-    <h1><%= title %></h1>
-    <form action="/brands/add" method="post">
-      <label for="name">Name: </label><br />
-      <input type="text" name="name" id="name" /><br />
-      <label for="description">Description: </label><br />
-      <textarea
-        name="description"
-        id="description"
-        cols="21"
-        rows="10"
-      ></textarea
-      ><br />
-      <button type="submit">Add brand</button>
-    </form>
+    <%- include('./partials/header') %> <%- include('./partials/navigation') %>
+    <div class="content">
+      <h1><%= title %></h1>
+      <form action="/brands/add" method="post">
+        <label for="name">Name: </label><br />
+        <input type="text" name="name" id="name" /><br />
+        <label for="description">Description: </label><br />
+        <textarea
+          name="description"
+          id="description"
+          cols="21"
+          rows="10"
+        ></textarea
+        ><br />
+        <button type="submit">Add brand</button>
+      </form>
+    </div>
+    <%- include('./partials/footer') %>
   </body>
 </html>

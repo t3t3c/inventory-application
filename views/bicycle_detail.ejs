@@ -2,27 +2,30 @@
 <html lang="en">
   <%- include('./partials/head', { title }) %>
   <body>
-    <%- include('./partials/navigation') %>
-    <p>
-      <a href="<%= locals.bicycle.brand.url %>"
-        ><%= locals.bicycle.brand.name.toUpperCase() %></a
-      >
-    </p>
-    <h3><%= locals.bicycle.name %></h3>
-    <p><%= locals.bicycle.description %></p>
-    <p>Price: <%= locals.bicycle.price %> €</p>
-    <p>Number in Stock: <%= locals.bicycle.numberInStock %></p>
-    <p>
-      Category:
-      <a href="<%= locals.bicycle.category.url %>"
-        ><%= locals.bicycle.category.name %></a
-      >
-    </p>
-    <p>
-      <a href='<%= locals.bicycle.url + "/delete" %>'>Delete</a> this bicycle
-    </p>
-    <p>
-      <a href='<%= locals.bicycle.url + "/update" %>'>Update</a> this bicycle
-    </p>
+    <%- include('./partials/header') %> <%- include('./partials/navigation') %>
+    <div class="content">
+      <p>
+        <a href="<%= locals.bicycle.brand.url %>"
+          ><%= locals.bicycle.brand.name.toUpperCase() %></a
+        >
+      </p>
+      <h3><%= locals.bicycle.name %></h3>
+      <p><%= locals.bicycle.description %></p>
+      <p>Price: <%= locals.bicycle.price %> €</p>
+      <p>Number in Stock: <%= locals.bicycle.numberInStock %></p>
+      <p>
+        Category:
+        <a href="<%= locals.bicycle.category.url %>"
+          ><%= locals.bicycle.category.name %></a
+        >
+      </p>
+      <p>
+        <a href='<%= locals.bicycle.url + "/delete" %>'>Delete</a> this bicycle
+      </p>
+      <p>
+        <a href='<%= locals.bicycle.url + "/update" %>'>Update</a> this bicycle
+      </p>
+    </div>
+    <%- include('./partials/footer') %>
   </body>
 </html>

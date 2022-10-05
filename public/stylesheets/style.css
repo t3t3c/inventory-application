@@ -97,7 +97,9 @@ a:hover {
   background-color: var(--black-shadows);
 }
 
-.content h1 {
+.content h1,
+.content h2,
+.content h3 {
   color: var(--medium-ruby);
 }
 

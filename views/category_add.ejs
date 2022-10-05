@@ -2,20 +2,25 @@
 <html lang="en">
   <%- include('./partials/head', { title }) %>
   <body>
+    <%- include('./partials/header') %>
     <%- include('./partials/navigation') %>
-    <h1><%= title %></h1>
-    <form action="/categories/add" method="post">
-      <label for="name">Name: </label><br />
-      <input type="text" name="name" id="name" /><br />
-      <label for="description">Description: </label><br />
-      <textarea
-        name="description"
-        id="description"
-        cols="21"
-        rows="10"
-      ></textarea
-      ><br />
-      <button type="submit">Add category</button>
-    </form>
+
+    <div class="content">
+      <h1><%= title %></h1>
+      <form action="/categories/add" method="post">
+        <label for="name">Name: </label><br />
+        <input type="text" name="name" id="name" /><br />
+        <label for="description">Description: </label><br />
+        <textarea
+          name="description"
+          id="description"
+          cols="21"
+          rows="10"
+        ></textarea
+        ><br />
+        <button type="submit">Add category</button>
+      </form>
+    </div>
+    <%- include('./partials/header') %>
   </body>
 </html>
