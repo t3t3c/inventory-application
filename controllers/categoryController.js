@@ -35,5 +35,31 @@ exports.addGet = (req, res) => {
 
 exports.addPost = async (req, res) => {
   await Category.create(req.body);
-  res.redirect('/categories')
+  res.redirect('/categories');
+};
+
+exports.deleteGet = async (req, res) => {
+  try {
+    const category = await Category.findById(req.params.id);
+    res.render('category_delete', {
+      title: `Delete ${category.name}`,
+      category,
+    });
+  } catch (error) {
+    console.log('categoryController deleteGet error: ', error);
+    next(error);
+  }
+};
+
+exports.deletePost = async (req, res) => {
+  try {
+    await Promise.all([
+      Bicycle.deleteMany({ category: req.params.id }),
+      Category.findByIdAndDelete(req.params.id),
+    ]);
+    res.redirect('/categories');
+  } catch (error) {
+    console.log('categoryController deletePost: ', error);
+    next(error);
+  }
 };

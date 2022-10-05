@@ -33,10 +33,13 @@ mongoose.connect(
 // HOMEPAGE
 
 app.get('/', (req, res) => {
-  res.render('index');
+  res.redirect('/home');
 });
 
 // ROUTES
+
+const homeRouter = require('./routes/home');
+app.use('/home', homeRouter);
 
 const bicycleRouter = require('./routes/bicycles');
 app.use('/bicycles', bicycleRouter);

@@ -13,6 +13,7 @@
     <% brandsList.forEach((brand) => { %>
     <h3><a href="<%= brand.url %>"><%= brand.name %></a></h3>
     <p><%= brand.description %></p>
+    <a href="<%= brand.url + '/delete' %>">Delete</a>
     <% }) %>
     <!-- prettier-ignore -->
   </body>

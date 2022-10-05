@@ -38,3 +38,26 @@ exports.addPost = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.deleteGet = async (req, res) => {
+  try {
+    const brand = await Brand.findById(req.params.id).exec();
+    res.render('brand_delete', { title: `Delete ${brand.name}`, brand });
+  } catch (error) {
+    console.log('brandController deleteGet error: ', error);
+    next(error);
+  }
+};
+
+exports.deletePost = async (req, res) => {
+  try {
+    await Promise.all([
+      Bicycle.deleteMany({ brand: req.params.id }),
+      Brand.findByIdAndDelete(req.params.id),
+    ]);
+    res.redirect('/brands');
+  } catch (error) {
+    console.log('brandController deletePost error: ', error);
+    next(error);
+  }
+};
