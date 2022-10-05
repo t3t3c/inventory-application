@@ -14,6 +14,11 @@ router.get('/:id/delete', categoryController.deleteGet);
 // POST webiste to delete
 router.post('/:id/delete', categoryController.deletePost);
 
+// GET website to update
+router.get('/:id/update', categoryController.updateGet);
+// POST form to update
+router.post('/:id/update', categoryController.updatePost);
+
 // get detail
 router.get('/:id', categoryController.filterByCategory);
 

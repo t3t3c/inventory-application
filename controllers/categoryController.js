@@ -63,3 +63,29 @@ exports.deletePost = async (req, res) => {
     next(error);
   }
 };
+
+exports.updateGet = async (req, res) => {
+  try {
+    const category = await Category.findById(req.params.id);
+    res.render('category_update', {
+      title: `Update ${category.name}`,
+      category,
+    });
+  } catch (error) {
+    console.log('categoryController updateGet error', error);
+    next(error);
+  }
+};
+
+exports.updatePost = async (req, res) => {
+  try {
+    const categoryToUpdate = await Category.findById(req.params.id);
+    categoryToUpdate.name = req.body.name;
+    categoryToUpdate.description = req.body.description;
+    await categoryToUpdate.save();
+    res.redirect('/categories');
+  } catch (error) {
+    console.log('categoryController updatePost error', error);
+    next(error);
+  }
+};
