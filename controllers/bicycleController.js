@@ -63,5 +63,49 @@ exports.deletePost = async (req, res) => {
     res.redirect('/bicycles');
   } catch (error) {
     console.log('bicycleController delete error');
+    next(error);
+  }
+};
+
+exports.updateGet = async (req, res, next) => {
+  try {
+    const [bicycle, categories, brands] = await Promise.all([
+      Bicycle.findById(req.params.id).populate('brand').populate('category'),
+      Category.find(),
+      Brand.find(),
+    ]);
+    res.render('bicycle_update', {
+      title: `Update ${bicycle.name}`,
+      bicycle,
+      categories,
+      brands,
+    });
+  } catch (error) {
+    console.log('bicycleController updateGet error', error);
+    next(error);
+  }
+};
+
+exports.updatePost = async (req, res, next) => {
+  try {
+    const updatedBicycle = {
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      numberInStock: req.body.numberInStock,
+      category: req.body.category,
+      brand: req.body.brand,
+    };
+    const bicycle = await Bicycle.findByIdAndUpdate(
+      req.params.id,
+      updatedBicycle,
+      { new: true }
+    );
+    // we are returning the updated bicycle with the new option set to true
+    // and redirect to the bicycle url adress
+    res.redirect(bicycle.url);
+  } catch (error) {
+    console.log('bicycleController updateGet error', error);
+    next(error);
   }
 };
