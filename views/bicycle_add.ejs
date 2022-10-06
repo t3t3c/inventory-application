@@ -9,31 +9,32 @@
       <h1><%= title %></h1>
       <form action="/bicycles/add" method="post">
         <label for="name">Name: </label><br />
-        <input type="text" name="name" id="description" /><br />
+        <input required type="text" name="name" id="description" /><br />
         <label for="description">Description: </label><br />
         <textarea
           name="description"
           id="description"
           cols="21"
           rows="10"
+          required
         ></textarea
         ><br />
         <label for="price">Price (in euro): </label><br />
-        <input type="number" name="price" id="price" /><br />
+        <input type="number" name="price" id="price" required/><br />
         <label for="numberInStock">Number in stock:</label><br />
-        <input type="number" name="numberInStock" id="numberInStock" /><br />
+        <input type="number" name="numberInStock" id="numberInStock" required/><br />
         <!-- prettier-ignore -->
         <div>
           <label>Category: </label><br>
           <% categories.forEach((category) => { %>
-            <input type="radio" name="category" id="<%= category.id %>" value="<%= category.id %>">
+            <input type="radio" name="category" id="<%= category.id %>" value="<%= category.id %>" required>
             <label for="<%= category.id %>"><%= category.name %></label> <br>
           <% }) %>
         </div>
         <!-- prettier-ignore -->
         <div>
           <label for="brand" >Brand: </label><br />
-          <select name="brand" id="brand">
+          <select name="brand" id="brand" required>
             <% brands.forEach((brand) => { %>
               <option value="<%= brand.id %>"><%=brand.name %></option>
             <% }) %>

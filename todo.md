@@ -5,5 +5,8 @@
 - [x] update for category
 - [x] update for brand
 - [ ] add pictures
-- [ ] add basic styling
-- [ ] sort by name/brand
+- [x] add basic styling
+- [ ] sort by name/brand/price
+- [ ] check out form verification (moze obejrzec filmik netninja i zoabczyc jak on to robi - ale MDN tez ogarnij)
+- ogarnij form verification na kategorii
+- [ ] make forms styling (required etc)

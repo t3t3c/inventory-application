@@ -8,14 +8,21 @@
       <form action="" method="post">
         <label for="name">Name: </label><br />
         <input
+          required
           type="text"
           name="name"
           id="name"
           value="<%= category.name %>"
         /><br />
         <label for="description">Description: </label><br />
-        <textarea name="description" id="description" cols="21" rows="10">
-      <%= category.description %></textarea
+        <!-- prettier-ignore -->
+        <textarea
+          required
+          name="description"
+          id="description"
+          cols="21"
+          rows="10"
+        ><%= category.description %></textarea
         ><br />
         <button type="submit">Update category</button>
         <a href="/categories">Go back and cancel update</a>

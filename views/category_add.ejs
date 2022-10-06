@@ -2,16 +2,16 @@
 <html lang="en">
   <%- include('./partials/head', { title }) %>
   <body>
-    <%- include('./partials/header') %>
-    <%- include('./partials/navigation') %>
+    <%- include('./partials/header') %> <%- include('./partials/navigation') %>
 
     <div class="content">
       <h1><%= title %></h1>
       <form action="/categories/add" method="post">
         <label for="name">Name: </label><br />
-        <input type="text" name="name" id="name" /><br />
+        <input required type="text" name="name" id="name" /><br />
         <label for="description">Description: </label><br />
         <textarea
+          required
           name="description"
           id="description"
           cols="21"

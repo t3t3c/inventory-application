@@ -2,24 +2,31 @@
 <html lang="en">
   <%- include('./partials/head', { title }) %>
   <body>
-    <%- include('./partials/header') %>
-    <%- include('./partials/navigation') %>
+    <%- include('./partials/header') %> <%- include('./partials/navigation') %>
     <div class="content">
       <h1><%= title %></h1>
       <form action="<%= bicycle.url + '/update' %>" method="post">
         <label for="name">Name: </label><br />
         <input
+          required
           type="text"
           name="name"
           id="description"
           value="<%= bicycle.name %>"
         /><br />
         <label for="description">Description: </label><br />
-        <textarea name="description" id="description" cols="21" rows="10">
-      <%= bicycle.description %></textarea
-        ><br />
+        <!-- prettier-ignore -->
+        <textarea
+          required
+          name="description"
+          id="description"
+          cols="21"
+          rows="10"
+        ><%= bicycle.description %></textarea>
+        <br />
         <label for="price">Price (in euro): </label><br />
         <input
+          required
           type="number"
           name="price"
           id="price"
@@ -27,6 +34,7 @@
         /><br />
         <label for="numberInStock">Number in stock:</label><br />
         <input
+          required
           type="number"
           name="numberInStock"
           id="numberInStock"
@@ -37,9 +45,9 @@
           <label>Category: </label><br>
           <% categories.forEach((category) => { %>
             <% if (category.id === bicycle.category.id) { %>
-              <input type="radio" name="category" id="<%= category.id %>" value="<%= category.id %>" checked>
+              <input required type="radio" name="category" id="<%= category.id %>" value="<%= category.id %>" checked>
               <% } else { %>
-                <input type="radio" name="category" id="<%= category.id %>" value="<%= category.id %>">
+                <input required type="radio" name="category" id="<%= category.id %>" value="<%= category.id %>">
             <% } %>
             <label for="<%= category.id %>"><%= category.name %></label> <br>
           <% }) %>
@@ -47,7 +55,7 @@
         <!-- prettier-ignore -->
         <div>
           <label for="brand" >Brand: </label><br />
-          <select name="brand" id="brand">
+          <select name="brand" id="brand" required>
             <% brands.forEach((brand) => { %>
               <% if (brand.id === bicycle.brand.id) { %>
                 <option value="<%= brand.id %>" selected><%=brand.name %></option>
