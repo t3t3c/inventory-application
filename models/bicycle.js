@@ -23,6 +23,10 @@ const bicylceSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Brand',
   },
+  img: {
+    data: Buffer,
+    contentType: String,
+  },
 });
 
 bicylceSchema.virtual('url').get(function () {

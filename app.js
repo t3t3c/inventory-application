@@ -30,6 +30,11 @@ mongoose.connect(
   }
 );
 
+// SETUP multer
+
+// const multer = require('multer');
+// const storage = multer.diskStorage()
+
 // HOMEPAGE
 
 app.get('/', (req, res) => {
