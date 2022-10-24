@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const logger = require('morgan');
 const app = express();
+require('dotenv').config();
 
 // setup the view engine
 app.set('view engine', 'ejs');
@@ -17,8 +18,7 @@ app.use(express.json());
 
 // MONGOOSE
 
-const uri =
-  'mongodb+srv://t3t3c:inventorypassword@inventory.nb74yzf.mongodb.net/bicycle_inventory?retryWrites=true&w=majority';
+const uri = process.env.MONGODB_URI;
 
 mongoose.connect(
   uri,
